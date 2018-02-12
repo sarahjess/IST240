@@ -1,0 +1,121 @@
+@{
+    Decimal total = 0;
+    var totalMsg = "";
+
+    if (IsPost)
+    {
+        // Retrieve user input
+        var valueA = Request["valA"];
+        var valueB = Request["valB"];
+
+        var Add = Request["radAdd"];
+        var Subtract = Request["radSubtract"];
+        var Multiply = Request["radMultiply"];
+        var Divide = Request["radDivide"];
+
+        //Switch alternative
+        if (Add != null)
+        {
+            total = valueA.AsDecimal() + valueB.AsDecimal();
+        }
+
+        if (Subtract != null)
+        {
+            total = valueA.AsDecimal() - valueB.AsDecimal();
+        }
+
+        if (Multiply != null)
+        {
+            total = valueA.AsDecimal() * valueB.AsDecimal();
+        }
+
+        if (Divide != null)
+        {
+            total = valueA.AsDecimal() / valueB.AsDecimal();
+        }
+
+
+        /*
+        switch (??)
+        {
+            case  Add != null:
+                total = valueA.AsDecimal() + valueB.AsDecimal();
+                break;
+
+            case Subtract != null:
+                total = valueA.AsDecimal() - valueB.AsDecimal();
+                break;
+
+            case Multiply != null:
+                total = valueA.AsDecimal() * valueB.AsDecimal();
+                break;
+
+            case Divide != null:
+                total = valueA.AsDecimal() / valueB.AsDecimal();
+                break;
+            
+        }*/
+
+        //Display Result
+        totalMsg = "Result: " + total;
+
+    }
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Web Calculator</title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        body {
+            background-color:lightgray;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            margin:50px;
+        }
+
+        table {
+            width:350px;
+            border-spacing:10px;
+            border-collapse:separate;           
+        }
+        td {
+            background-color:white;
+            padding:10px;
+        }
+    </style>
+</head>
+<body>   
+    <form method="post" action="">
+        <div>
+            <table align="center">
+                <tr>
+                    <td colspan="2" style="font-weight:bold; font-size:large; color:darkgray;">Calculator</td>
+                </tr>
+                <tr>
+                    <td style="padding-left:18px">
+                        <p>
+                            <label for="valA">Value A:</label>
+                            <input type="text" name="valA" />
+                        </p>
+                        <p>
+                            <label for="valB">Value B:</label>
+                            <input type="text" name="valB" />
+                        </p>
+                    </td>
+                    <td width="100">
+                        <input type="radio" name="radAdd" />Add<br />
+                        <input type="radio" name="radSubtract" />Subtract<br />
+                        <input type="radio" name="radMultiply" />Multiply<br />
+                        <input type="radio" name="radDivide" />Divide<br />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" value="Submit" /> <label style="padding-left:10px">@totalMsg</label></td>
+                </tr>
+            </table>
+        </div>
+        
+    </form>
+</body>
+</html>
