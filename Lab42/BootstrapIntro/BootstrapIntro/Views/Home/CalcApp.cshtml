@@ -1,0 +1,45 @@
+﻿@model  string
+@{
+    ViewBag.Title = "CalcApp";
+}
+
+<h2>CalcApp</h2>
+ 
+    <style type="text/css">
+        td {
+            background-color: #bababa;
+            padding: 10px;
+        }
+    </style>
+
+    <form method="post" action="/Home/CalcApp">
+        <div>
+            <table align="center" style="width:350px; border-spacing:10px; border-collapse:separate;">
+                <tr>
+                    <td colspan="2" style="font-weight:bold; font-size:large;">Calculator</td>
+                </tr>
+                <tr>
+                    <td style="padding-left:18px">
+                        <p>
+                            <label for="valueA">Value A:</label>
+                            <input type="text" name="valueA" />
+                        </p>
+                        <p>
+                            <label for="valueB">Value B:</label>
+                            <input type="text" name="valueB" />
+                        </p>
+                    </td>
+                    <td width="100">
+                        <input type="radio" name="radSelect" value="add" />Add<br />
+                        <input type="radio" name="radSelect" value="subtract" />Subtract<br />
+                        <input type="radio" name="radSelect" value="multiply" />Multiply<br />
+                        <input type="radio" name="radSelect" value="divide" />Divide<br />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button>Submit</button> <label style="padding-left:10px">@Model</label></td>
+                </tr>
+            </table>
+        </div>
+
+    </form>

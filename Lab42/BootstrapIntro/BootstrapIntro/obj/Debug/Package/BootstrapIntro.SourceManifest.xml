@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="C:\Users\Sarahkins\OneDrive\NHTI 2018 Spring\IST240 Advanced Web Programming\BootstrapIntro\BootstrapIntro\obj\Debug\Package\PackageTmp" />
+  <setAcl path="C:\Users\Sarahkins\OneDrive\NHTI 2018 Spring\IST240 Advanced Web Programming\BootstrapIntro\BootstrapIntro\obj\Debug\Package\PackageTmp" setAclResourceType="Directory" />
+  <setAcl path="C:\Users\Sarahkins\OneDrive\NHTI 2018 Spring\IST240 Advanced Web Programming\BootstrapIntro\BootstrapIntro\obj\Debug\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
+</sitemanifest>
